@@ -1,0 +1,32 @@
+<h2>People</h2>
+<h4>Inserting</h4>
+<form>
+    <div class="form-group">
+        <label for="insertingName">Name</label>
+        <input class="form-control" id="insertingName" ng-model="inserting.name" />
+    </div>
+    <button class="btn btn-primary" ng-click="insert()">Insert</button>
+</form>
+<h4>Editing</h4>
+<form>
+    <div class="form-group">
+        <label for="editing.Name">Name</label>
+        <input class="form-control" id="editingName" ng-model="editing.name" />
+    </div>
+    <button class="btn btn-primary" ng-click="update()">Update</button>
+</form>
+<ul class="list-group">
+    <li ng-repeat="person in people" class="list-group-item">
+        <div class="row">
+            <div class="col-md-10">
+                {{ person.name }}
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary" ng-click="edit(person)">Edit</button>        
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-warning" ng-click="delete(person)">Delete</button>        
+            </div>
+        </div>
+    </li>
+</ul>
